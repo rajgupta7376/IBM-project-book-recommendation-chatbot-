@@ -117,7 +117,7 @@
 
    <div class="section">
     <h2> Credits</h2>
-    <p>Developed by <strong>Raj Gupta</strong><br>
+    <p>Developed by : <strong>Raj Gupta</strong><br>
     Institute : United College of Engineering and Research , Naini Prayagraj</p>
   </div>
 
