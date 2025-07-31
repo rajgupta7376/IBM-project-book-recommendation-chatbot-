@@ -115,9 +115,9 @@
     </ul>
   </div>
 
-  <div class="section">
+   <div class="section">
     <h2> Credits</h2>
-    <p>Developed by <strong>Ayush Raj</strong><br>
-    Vivekananda Global University, Jaipur</p>
+    <p>Developed by <strong>Raj Gupta</strong><br>
+    Institute : United College of Engineering and Research , Naini Prayagraj</p>
   </div>
 
