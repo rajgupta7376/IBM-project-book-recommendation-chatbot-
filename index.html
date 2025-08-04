@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book B - Discover Famous Books</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap">
+    <style>
+        :root {
+            --primary: #4b2e83;
+            --secondary: #85754d;
+            --light: #f8f8f8;
+            --dark: #222222;
+            --accent: #d8b111;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cbd1db47-5029-4586-a907-9777523f0cd9.png') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .book-showcase {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .book-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .book-cover {
+            height: 350px;
+            overflow: hidden;
+        }
+        
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+        
+        .book-info {
+            padding: 1.5rem;
+        }
+        
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .book-author {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .book-description {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Book B</div>
+        <div class="tagline">Discover the world's most famous books</div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Timeless Literary Masterpieces</h2>
+            <p>Explore curated collection of the most influential books from around the world</p>
+        </div>
+    </section>
+    
+    <section class="book-showcase">
+        <h2 class="section-title">Featured Books</h2>
+        <div class="books-grid">
+            <!-- Book 1 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/baa53769-009d-45be-8d16-61a1dc33886b.png" alt="Cover of 1984 by George Orwell showing a bleak futuristic cityscape" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">1984</h3>
+                    <p class="book-author">by George Orwell</p>
+                    <p class="book-description">A dystopian novel about totalitarianism, mass surveillance, and thought control in a futuristic society.</p>
+                    <div class="book-meta">
+                        <span>Published: 1949</span>
+                        <span>Genre: Dystopian</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3405672b-6969-4517-9379-db2fcdb3cba8.png" alt="Cover of To Kill a Mockingbird showing a southern landscape with a mockingbird" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">To Kill a Mockingbird</h3>
+                    <p class="book-author">by Harper Lee</p>
+                    <p class="book-description">A powerful story of racial injustice and moral growth in the American South during the 1930s.</p>
+                    <div class="book-meta">
+                        <span>Published: 1960</span>
+                        <span>Genre: Southern Gothic</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 3 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7362f820-96ee-411f-a081-faefaa3049ea.png" alt="Cover of Pride and Prejudice showing an elegant Regency-era scene" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Pride and Prejudice</h3>
+                    <p class="book-author">by Jane Austen</p>
+                    <p class="book-description">A romantic novel about the emotional development of Elizabeth Bennet, who learns about the repercussions of hasty judgments.</p>
+                    <div class="book-meta">
+                        <span>Published: 1813</span>
+                        <span>Genre: Romance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 4 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7cd204ea-43e9-4c41-b32b-99c1e6ef34da.png" alt="Cover of The Great Gatsby showing Art Deco design elements" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">The Great Gatsby</h3>
+                    <p class="book-author">by F. Scott Fitzgerald</p>
+                    <p class="book-description">A story of wealth, love, and the American Dream in the Roaring Twenties.</p>
+                    <div class="book-meta">
+                        <span>Published: 1925</span>
+                        <span>Genre: Tragedy</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 5 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/08fff91c-40ec-454f-ab0c-e0cd516f80c6.png" alt="Cover of Catch-22 showing military imagery with a surreal twist" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Catch-22</h3>
+                    <p class="book-author">by Joseph Heller</p>
+                    <p class="book-description">A satirical novel about war bureaucracy and the absurdity of military life during WWII.</p>
+                    <div class="book-meta">
+                        <span>Published: 1961</span>
+                        <span>Genre: Satire</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 6 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0f92e52b-77a2-4fe5-bd52-ae531fdd0448.png" alt="Cover of The Hobbit showing a fantasy landscape with mountains" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">The Hobbit</h3>
+                    <p class="book-author">by J.R.R. Tolkien</p>
+                    <p class="book-description">A fantasy adventure novel about Bilbo Baggins's journey to win a share of a dragon's treasure.</p>
+                    <div class="book-meta">
+                        <span>Published: 1937</span>
+                        <span>Genre: Fantasy</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 7 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf8ece21-a369-4ec9-a26e-b7a77b68850d.png" alt="Cover of Crime and Punishment showing Russian urban landscape" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Crime and Punishment</h3>
+                    <p class="book-author">by Fyodor Dostoevsky</p>
+                    <p class="book-description">A psychological novel exploring morality, redemption, and the consequences of committing murder.</p>
+                    <div class="book-meta">
+                        <span>Published: 1866</span>
+                        <span>Genre: Psychological</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Book 8 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/27dcdf56-8022-4fb2-8de3-6e080ef8a8dd.png" alt="Cover of Frankenstein showing Gothic horror elements" />
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Frankenstein</h3>
+                    <p class="book-author">by Mary Shelley</p>
+                    <p class="book-description">A Gothic novel about scientific ambition and its consequences when Victor Frankenstein creates life.</p>
+                    <div class="book-meta">
+                        <span>Published: 1818</span>
+                        <span>Genre: Gothic Horror</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2023 Book B. All rights reserved.</p>
+        <p>Discover more books and literary classics at our collection.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation for book cards when scrolling
+            const bookCards = document.querySelectorAll('.book-card');
+            
+            const animateCards = () => {
+                bookCards.forEach((card, index) => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (cardPosition < screenPosition) {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    }
+                });
+            };
+            
+            // Initial animation setup
+            bookCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateCards);
+            animateCards(); // Trigger on load
+            
+            // Parallax effect for hero section
+            const hero = document.querySelector('.hero');
+            window.addEventListener('scroll', function() {
+                const offset = window.pageYOffset;
+                hero.style.backgroundPositionY = offset * 0.7 + 'px';
+            });
+        });
+    </script>
+   <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "ddedbfe1-0793-4bb9-bdd2-62482e5c4b75", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "6e516fd9-8bb6-423a-8e63-ed5a832f38a7", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
